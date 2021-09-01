@@ -1,0 +1,9 @@
+node_modules/
+images/*
+final-images/*
+resized-images/*
+.env
+package-lock.json
+traits.json
+info.json
+.DS_Store
