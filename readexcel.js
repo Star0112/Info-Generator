@@ -73,7 +73,7 @@ async function main() {
         data['external_url'] = totalData[i]['external_url'];
         data['name'] = `PunkCows #${i}`;
 
-        await fs.writeFileSync(`./json_results/${i}.json`, JSON.stringify(data));
+        await fs.writeFileSync(`./json_results/${i}`, JSON.stringify(data));
         shuffleData.push(data);
     }
 
