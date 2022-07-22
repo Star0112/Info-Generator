@@ -1,6 +1,5 @@
 const fs = require('fs');
 const pinataData = require('./json_src/pinata.json');
-// const traitData = require('./json_src/info_minimum.json');
 const traitData = require('./json_src/info.json');
 
 async function main() {
@@ -20,10 +19,10 @@ async function main() {
     const attributes = [];
     const { id, hash } = pinataData[i];
     // Pinata checking
-    // if (id !== i) {
-    //   console.log(pinataData[i])
-    //   break;
-    // }
+    if (id !== i) {
+      console.log(pinataData[i])
+      break;
+    }
     Object.keys(traitData[id]).map(key => {
       key !== "name" && traitData[id][key] !== "None" && attributes.push({
         "trait_type": key,
@@ -31,7 +30,7 @@ async function main() {
       })
     })
     data['attributes'] = attributes;
-    data['description'] = 'PixelMoji is a collection of 1000 procedurally generated collectible NFTs! PixelMojis are the most stylish and expressive NFT\'s on the Ethereum Blockchain. Each PixelMoji can be found with different eyewear, jewlery, along with thousands of possible expressions, however; no PixelMoji is ever the same. How will YOUR PixelMoji express itself?';
+    data['description'] = '';
     data['image'] = `https://ipfs.io/ipfs/${hash}`;
     data['external_url'] = 'https://pixelmoji.io';
     data['name'] = `PixelMoji #${i}`;
